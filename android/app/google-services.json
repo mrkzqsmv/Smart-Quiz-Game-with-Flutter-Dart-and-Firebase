@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "796707755484",
+    "project_id": "tetbiq0",
+    "storage_bucket": "tetbiq0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796707755484:android:52a9771f080c31a17eab19",
+        "android_client_info": {
+          "package_name": "com.example.tetbiq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9ra0Y2uyED0_mprbiHJLtc1gZ_TZAzHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
