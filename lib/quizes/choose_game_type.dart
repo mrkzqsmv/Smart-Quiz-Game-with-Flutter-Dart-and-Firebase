@@ -42,6 +42,9 @@ class _ChooseGameTypeState extends State<ChooseGameType> {
           return Padding(
             padding: const EdgeInsets.all(15.0),
             child: ListTile(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
               trailing: IconButton(
                 onPressed: () {
                   if (colors[index]==Colors.blue) {
@@ -51,7 +54,7 @@ class _ChooseGameTypeState extends State<ChooseGameType> {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const TrueorFalseQuiz()),);
                   }
                   if (colors[index]==Colors.green) {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const TypeAnswerQuiz()),);
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> TypeAnswerQuiz()),);
                   }
                 },
                 icon: const Icon(

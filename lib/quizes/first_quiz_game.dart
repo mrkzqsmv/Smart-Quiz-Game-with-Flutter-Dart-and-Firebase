@@ -22,6 +22,17 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
     return Scaffold(
       backgroundColor: Colors.deepPurple.shade100,
       appBar: AppBar(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        shadowColor: Colors.black,
+        elevation: 20,
+        centerTitle: true,
+        title: Text('Quiz',
+        style: GoogleFonts.quando(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
