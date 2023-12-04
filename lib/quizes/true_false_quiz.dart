@@ -1,54 +1,46 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tetbiq/models/first_quiz_model.dart';
 import 'package:tetbiq/quizes/choose_game_type.dart';
+import 'package:tetbiq/quizes/true_false_quiz_model.dart';
 
-class FirstQuizGame extends StatefulWidget {
-  const FirstQuizGame({super.key});
+class TrueorFalseQuiz extends StatefulWidget {
+  const TrueorFalseQuiz({super.key});
 
   @override
-  State<FirstQuizGame> createState() => _FirstQuizGameState();
+  State<TrueorFalseQuiz> createState() => _TrueorFalseQuizState();
 }
 
-class _FirstQuizGameState extends State<FirstQuizGame> {
-  //Define datas
-  List<Question> questionList = getQuestions();
+class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
+  //define datas
+  List<TrueFalseQuestion> questionList = getQuestions();
   int currentQuestionIndex = 0;
   int score = 0;
-  Answer? selectedAnswer;
+  TrueFalseAnswer? selectedAnswer;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple.shade100,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-          ),
+        shadowColor: Colors.black.withOpacity(0.5),
+        elevation: 15,
+        centerTitle: true,
+        title: Text(
+          'True or False',
+          style: GoogleFonts.quando(),
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image:
-                AssetImage('assets/images/background_image _for_project.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _questionWidget(),
-              _answerList(),
-              _nextButton(),
-            ],
-          ),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _questionWidget(),
+            _answerList(),
+            _nextButton(),
+          ],
         ),
       ),
     );
@@ -101,7 +93,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
     );
   }
 
-  Widget _answerButton(Answer answer) {
+  Widget _answerButton(TrueFalseAnswer answer) {
     bool isSelected;
     if (answer == selectedAnswer) {
       isSelected = true;
@@ -169,49 +161,46 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
     }
     String title = isPassed ? 'Passed' : 'Failed';
     return AlertDialog(
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w300),
-            ),
-            Text(
-              'Score:   ${score.toString()}',
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.w300),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const ChooseGameType(),
-                  ),
-                );
-              },
-              child: const Text('Go to Game types'),
-            ),
-          ],
-        ),
-        backgroundColor: isPassed ? Colors.green : Colors.red,
-        content: ElevatedButton(
-          onPressed: () {
-            setState(() {
-              Navigator.pop(context);
-              currentQuestionIndex = 0;
-              score = 0;
-              selectedAnswer = null;
-            });
-          },
-          child: const Text('Restart'),
-        ));
+      title: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w300),
+          ),
+          Text(
+            'Score:   ${score.toString()}',
+            style: const TextStyle(
+                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w300),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ChooseGameType(),
+                ),
+              );
+            },
+            child: const Text('Go to Game types'),
+          ),
+        ],
+      ),
+      backgroundColor: isPassed ? Colors.green : Colors.red,
+      content: ElevatedButton(
+        onPressed: () {
+          setState(() {
+            Navigator.pop(context);
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswer = null;
+          });
+        },
+        child: const Text('Restart'),
+      ),
+    );
   }
 }

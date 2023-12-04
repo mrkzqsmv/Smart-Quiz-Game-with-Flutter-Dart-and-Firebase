@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:tetbiq/quizes/choose_game_type.dart';
 import 'package:tetbiq/quizes/first_quiz_game.dart';
 
 class Categories extends StatefulWidget {
@@ -69,7 +70,7 @@ class _CategoriesState extends State<Categories> {
               trailing: IconButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const FirstQuizGame()));
+                      builder: (context) => const ChooseGameType()));
                 },
                 icon: const Icon(
                   Icons.keyboard_arrow_right_rounded,

@@ -372,7 +372,9 @@ class _ProfilePageState extends State<ProfilePage> {
             imgPath,
             width: 120,
           ),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           Text(
             authorName,
             textAlign: TextAlign.center,
