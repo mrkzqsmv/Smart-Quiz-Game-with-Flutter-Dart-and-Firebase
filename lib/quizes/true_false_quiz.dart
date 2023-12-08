@@ -92,12 +92,9 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
   }
 
   Widget _answerButton(TrueFalseAnswer answer) {
-    bool isSelected;
-    if (answer == selectedAnswer) {
-      isSelected = true;
-    } else {
-      isSelected = false;
-    }
+    bool isSelected = answer == selectedAnswer;
+    bool isCorrect = answer.isCorrect;
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
@@ -105,16 +102,18 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
       child: ElevatedButton(
         onPressed: () {
           if (selectedAnswer == null) {
-            if (answer.isCorrect) {
-              score++;
-            }
             setState(() {
               selectedAnswer = answer;
+              if (answer.isCorrect) {
+                score++;
+              }
             });
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.greenAccent : Colors.white,
+          backgroundColor: isSelected
+              ? (isCorrect ? Colors.green : Colors.red)
+              : Colors.white,
           foregroundColor: isSelected ? Colors.white : Colors.black,
         ),
         child: Text(answer.answerText),
@@ -122,25 +121,55 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
     );
   }
 
+  // Widget _nextButton() {
+  //   bool isLastQuestion = false;
+  //   if (currentQuestionIndex == questionList.length - 1) {
+  //     isLastQuestion = true;
+  //   }
+  //   return SizedBox(
+  //     width: MediaQuery.of(context).size.width * 0.5,
+  //     height: 48,
+  //     child: ElevatedButton(
+  //       onPressed: () {
+  //         if (isLastQuestion) {
+  //           //display score
+  //           showDialog(context: context, builder: (_) => _showScoreDialog());
+  //         } else {
+  //           //next question
+  //           setState(() {
+  //             currentQuestionIndex++;
+  //             selectedAnswer = null;
+  //           });
+  //         }
+  //       },
+  //       style: ElevatedButton.styleFrom(
+  //         backgroundColor: Colors.blueAccent,
+  //         foregroundColor: Colors.white,
+  //       ),
+  //       child: Text(isLastQuestion ? 'Təsdiqlə' : 'Növbəti'),
+  //     ),
+  //   );
+  // }
+
   Widget _nextButton() {
-    bool isLastQuestion = false;
-    if (currentQuestionIndex == questionList.length - 1) {
-      isLastQuestion = true;
-    }
+    bool isLastQuestion = currentQuestionIndex == questionList.length - 1;
+
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
       height: 48,
       child: ElevatedButton(
         onPressed: () {
-          if (isLastQuestion) {
-            //display score
-            showDialog(context: context, builder: (_) => _showScoreDialog());
-          } else {
-            //next question
-            setState(() {
-              currentQuestionIndex++;
-              selectedAnswer = null;
-            });
+          if (selectedAnswer != null || isLastQuestion) {
+            if (isLastQuestion) {
+              // Display score
+              showDialog(context: context, builder: (_) => _showScoreDialog());
+            } else {
+              // Next question
+              setState(() {
+                currentQuestionIndex++;
+                selectedAnswer = null;
+              });
+            }
           }
         },
         style: ElevatedButton.styleFrom(

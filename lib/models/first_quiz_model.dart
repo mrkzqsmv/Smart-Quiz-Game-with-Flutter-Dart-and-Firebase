@@ -108,7 +108,7 @@ List<Question> getQuestions() {
       'Kimyəvi nisbətdə genərləşmə teorisini kim təklif edib?',
       [
         Answer(answerText: 'Albert Aynshteyn', isCorrect: true),
-        Answer(answerText: 'İsaak Nüton', isCorrect: false),
+        Answer(answerText: 'İsaak Nyuton', isCorrect: false),
         Answer(answerText: 'Qalileo Qalilei', isCorrect: false),
         Answer(answerText: 'Stiven Haukinq', isCorrect: false),
       ],

@@ -1,46 +1,6 @@
-// import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
-// import 'package:tetbiq/quizes/type_answer_quiz_model.dart';
-
-// class TypeAnswerQuiz extends StatefulWidget {
-//   const TypeAnswerQuiz({super.key});
-
-//   @override
-//   State<TypeAnswerQuiz> createState() => _TypeAnswerQuizState();
-// }
-
-// class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         backgroundColor: Colors.deepPurple.shade100,
-//         appBar: AppBar(
-//           shadowColor: Colors.black,
-//           elevation: 10,
-//           shape: RoundedRectangleBorder(
-//             borderRadius: BorderRadius.circular(20),
-//           ),
-//           centerTitle: true,
-//           title: Text(
-//             'Type Answer',
-//             style:
-//                 GoogleFonts.quando(fontSize: 20, fontWeight: FontWeight.bold),
-//           ),
-//         ),
-//         body: Column(
-//           children: [
-
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 
 class TypeAnswerQuiz extends StatefulWidget {
@@ -157,6 +117,9 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       child: Scaffold(
         backgroundColor: Colors.deepPurple.shade100,
         appBar: AppBar(
+          leading: IconButton(onPressed: (){
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const ProfilePage()));
+          }, icon: const Icon(Icons.arrow_back_ios)),
           shadowColor: Colors.black.withOpacity(0.5),
           elevation: 20,
           shape: RoundedRectangleBorder(
@@ -164,7 +127,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
           ),
           title: Text(
             'Type Answer',
-            style: GoogleFonts.quando(
+            style: GoogleFonts.roboto(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
@@ -181,7 +144,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
               ),
               Text(
                 quizQuestions[currentQuestionIndex].question,
-                style: GoogleFonts.quando(
+                style: GoogleFonts.roboto(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
@@ -196,7 +159,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
                       Radius.circular(10),
                     ),
                   ),
-                  hintText: 'Type the answer',
+                  hintText: 'Cavabı daxil edin',
                 ),
               ),
               const SizedBox(height: 16),
@@ -204,7 +167,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
                 onTap: checkAnswer,
                 child: const ButtonWidget(
                   color: Colors.deepPurple,
-                  text: 'Check the answer',
+                  text: 'Cavabı yoxla',
                   txtColor: Colors.white,
                 ),
               ),
@@ -215,7 +178,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
                 onTap: goToNextQuestion,
                 child: const ButtonWidget(
                   color: Colors.deepPurple,
-                  text: 'Next Question',
+                  text: 'Növbəti',
                   txtColor: Colors.white,
                 ),
               ),
@@ -234,15 +197,16 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Answer'),
-          content: Text(isCorrect ? 'True!' : 'False!'),
+          title: const Text('Cavab'),
+          content: answerController.text.isEmpty
+              ? const Text('Cavabı daxil edin')
+              : Text(isCorrect ? 'Doğru!' : 'Yanlış!'),
           actions: [
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
-                goToNextQuestion();
               },
-              child: const Text('Okay'),
+              child: const Text('Tamam'),
             ),
           ],
         );
@@ -252,24 +216,28 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
 
   void goToNextQuestion() {
     if (currentQuestionIndex < quizQuestions.length - 1) {
-      setState(() {
-        currentQuestionIndex++;
-        answerController.clear();
-      });
+      if (answerController.text.isEmpty) {
+        currentQuestionIndex == currentQuestionIndex;
+      } else {
+        setState(() {
+          currentQuestionIndex++;
+          answerController.clear();
+        });
+      }
     } else {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text('Quiz is completed.'),
-            content: const Text('Congratulations. You completed the quiz!'),
+            title: const Text('Sorğu tamamlandı.'),
+            content: const Text('Təbriklər. Sorğunu tamamladınız!'),
             actions: [
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
                   resetQuiz();
                 },
-                child: const Text('Restart'),
+                child: const Text('Yenidən başlayın'),
               ),
             ],
           );

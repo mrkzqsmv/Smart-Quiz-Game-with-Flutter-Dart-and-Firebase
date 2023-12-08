@@ -1,11 +1,14 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tetbiq/add_quizes/add_quiz.dart';
 import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 import 'package:tetbiq/pages/profile_pages/settings_page.dart';
 import 'package:tetbiq/pages/profile_pages/users_profile.dart';
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }

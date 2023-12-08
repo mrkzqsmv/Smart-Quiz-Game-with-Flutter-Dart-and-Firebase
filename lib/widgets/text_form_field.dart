@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class TextFormFieldWidget extends StatefulWidget {
@@ -13,9 +15,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-        suffixIcon: IconButton(onPressed: (){
-
-        }, icon: const Icon(Icons.add)),
         filled: true,
         fillColor: Colors.grey.shade300,
         border: OutlineInputBorder(

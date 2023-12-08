@@ -1,4 +1,5 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -139,12 +140,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
         });
   }
 
-  Future signOut() async {
+   signOut() async{
     try {
       await auth.signOut();
-      print('cikis yapildi');
+      debugPrint('ugurla cixis edildi');
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginPage()));
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 }

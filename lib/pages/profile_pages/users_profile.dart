@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 
 class UsersPage extends StatefulWidget {
   const UsersPage({super.key});

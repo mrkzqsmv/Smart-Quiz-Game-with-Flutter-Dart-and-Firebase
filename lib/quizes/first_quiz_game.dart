@@ -45,16 +45,14 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
         ),
       ),
       body: Container(
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              _questionWidget(),
-              _answerList(),
-              _nextButton(),
-            ],
-          ),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _questionWidget(),
+            _answerList(),
+            _nextButton(),
+          ],
         ),
       ),
     );
@@ -108,12 +106,10 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
   }
 
   Widget _answerButton(Answer answer) {
-    bool isSelected;
-    if (answer == selectedAnswer) {
-      isSelected = true;
-    } else {
-      isSelected = false;
-    }
+    bool isSelected = answer == selectedAnswer;
+    bool isCorrect = answer.isCorrect;
+    bool isWrongSelected = isSelected && !isCorrect;
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
@@ -121,17 +117,18 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
       child: ElevatedButton(
         onPressed: () {
           if (selectedAnswer == null) {
-            if (answer.isCorrect) {
-              score++;
-              print(true);
-            }
             setState(() {
               selectedAnswer = answer;
+              if (answer.isCorrect) {
+                score++;
+              }
             });
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.greenAccent : Colors.white,
+          backgroundColor: isWrongSelected
+              ? Colors.red
+              : (isSelected ? Colors.green : Colors.white),
           foregroundColor: isSelected ? Colors.white : Colors.black,
         ),
         child: Text(answer.answerText),
@@ -140,10 +137,9 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
   }
 
   Widget _nextButton() {
-    bool isLastQuestion = false;
-    if (currentQuestionIndex == questionList.length - 1) {
-      isLastQuestion = true;
-    }
+    bool isLastQuestion = currentQuestionIndex == questionList.length - 1;
+    bool hasSelectedAnswer = selectedAnswer != null;
+
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
       height: 48,
@@ -152,7 +148,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
           if (isLastQuestion) {
             //display score
             showDialog(context: context, builder: (_) => _showScoreDialog());
-          } else {
+          } else if (hasSelectedAnswer) {
             //next question
             setState(() {
               currentQuestionIndex++;

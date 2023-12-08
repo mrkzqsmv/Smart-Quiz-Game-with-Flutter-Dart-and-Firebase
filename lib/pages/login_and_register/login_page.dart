@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 import 'package:tetbiq/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tetbiq/pages/login_and_register/forgot_password_page.dart';
+import 'package:tetbiq/pages/login_and_register/register_page.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -38,76 +39,95 @@ class _LoginPageState extends State<LoginPage> {
               },
               icon: const Icon(Icons.arrow_back_ios)),
         ),
-        body: Center(
-          child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Kvizə daxil olmaq üçün giriş edin',
-                    style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: 20,
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: ListView(
+            children: [
+              const SizedBox(
+                height: 5,
+              ),
+              Text(
+                'Kvizə daxil olmaq üçün giriş edin',
+                style: GoogleFonts.roboto(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: TextFormField(
+                          controller: emailController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Email adresinizi daxil edin';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Email',
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 10),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: TextFormField(
-                              controller: emailController,
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Email adresinizi daxil edin';
-                                }
-                                return null;
-                              },
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Email',
-                              ),
-                            ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 5, horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: TextFormField(
+                          controller: passwordController,
+                          obscureText: true,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Şifrənizi daxil edin';
+                            }
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Şifrə',
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 5, horizontal: 10),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: TextFormField(
-                              controller: passwordController,
-                              obscureText: true,
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Şifrənizi daxil edin';
-                                }
-                                return null;
-                              },
-                              decoration: const InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Şifrə',
-                              ),
-                            ),
-                          ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterPage(),
                         ),
-                      ],
+                      );
+                    },
+                    child: Text(
+                      'Hesabın yoxdur ?',
+                      style: GoogleFonts.roboto(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   TextButton(
@@ -126,47 +146,53 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  SignInButton(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
-                    Buttons.google,
-                    text: "Sign up with Google",
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SignInButton(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
-                    Buttons.facebook,
-                    text: "Sign up with Facebook",
-                    onPressed: () {},
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      if (_formKey.currentState!.validate()) {
-                        _formKey.currentState!.save();
-                        final email = emailController.text;
-                        final password = passwordController.text;
-                        auth.signInWithEmailAndPassword(email: email,password: password);
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNavBar()));
-                      }
-                    },
-                    child: const ButtonWidget(
-                        color: Colors.white,
-                        text: 'Giriş et',
-                        txtColor: Colors.deepPurple),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
                 ],
-              )),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              SignInButton(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 10),
+                Buttons.google,
+                text: "Sign up with Google",
+                onPressed: () {},
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              SignInButton(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 10),
+                Buttons.facebook,
+                text: "Sign up with Facebook",
+                onPressed: () {},
+              ),
+              const Spacer(),
+              InkWell(
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    final email = emailController.text;
+                    final password = passwordController.text;
+                    auth.signInWithEmailAndPassword(
+                        email: email, password: password);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BottomNavBar()));
+                  }
+                },
+                child: const ButtonWidget(
+                    color: Colors.white,
+                    text: 'Giriş et',
+                    txtColor: Colors.deepPurple),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
         ),
       ),
     );

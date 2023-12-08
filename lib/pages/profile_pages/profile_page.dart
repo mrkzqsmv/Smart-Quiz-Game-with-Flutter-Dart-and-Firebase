@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:tetbiq/add_quizes/add_quiz.dart';
-import 'package:tetbiq/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tetbiq/pages/login_and_register/login_page.dart';
-import 'package:tetbiq/pages/profile_pages/settings_page.dart';
 import 'package:tetbiq/pages/profile_pages/users_profile.dart';
 import 'package:tetbiq/quizes/categories.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
@@ -65,35 +63,34 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: 10,
                       ),
                       Text(
-                        'Salam, Yeni İstifadəçi',
+                        'Xoş gəlmisiniz',
                         style: GoogleFonts.roboto(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
                       ),
-                      Container(
-                        child: Row(
-                          children: [
-                            const Icon(Icons.search),
-                            IconButton(
-                              onPressed: () {
-                                try {
-                                  auth.signOut();
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) => const LoginPage(),
-                                    ),
-                                  );
-                                } catch (e) {
-                                  debugPrint(e.toString());
-                                }
-                              },
-                              icon: const Icon(
-                                Icons.output_sharp,
-                              ),
-                            )
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          const Icon(Icons.search),
+                          IconButton(
+                            onPressed: () {
+                              try {
+                                auth.signOut();
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const LoginPage(),
+                                  ),
+                                );
+                                debugPrint('cixis edildi');
+                              } catch (e) {
+                                debugPrint(e.toString());
+                              }
+                            },
+                            icon: const Icon(
+                              Icons.output_sharp,
+                            ),
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -116,19 +113,22 @@ class _ProfilePageState extends State<ProfilePage> {
                               const Icon(
                                 Ionicons.file_tray,
                                 size: 30,
-                              )),
+                              ),
+                              const AddQuizScreen()),
                           createColumn(
                               'Oyna',
                               const Icon(
                                 Ionicons.play,
                                 size: 30,
-                              )),
+                              ),
+                              const Categories()),
                           createColumn(
                               'Oyunçular',
                               const Icon(
                                 Ionicons.people,
                                 size: 30,
-                              )),
+                              ),
+                              const UsersPage()),
                         ],
                       ),
                     ],
@@ -213,7 +213,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        Container(
+                        SizedBox(
                           width: 160.0,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -236,7 +236,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: 160.0,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -259,7 +259,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: 160.0,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,9 +271,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                   width: 120,
                                 ),
                               ),
+                              const SizedBox(
+                                height: 5,
+                              ),
                               Text(
                                 'Walk around the world with\n Geography Quiz',
-                                textAlign: TextAlign.center,
                                 style: GoogleFonts.quando(
                                     color: Colors.white,
                                     fontSize: 13,
@@ -329,15 +331,21 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  createColumn(String text, Icon icon) {
-    return Column(
-      children: [
-        Text(
-          text,
-          style: GoogleFonts.quando(fontSize: 15, fontWeight: FontWeight.bold),
-        ),
-        icon,
-      ],
+  createColumn(String text, Icon icon, Widget ref) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => ref));
+      },
+      child: Column(
+        children: [
+          Text(
+            text,
+            style:
+                GoogleFonts.quando(fontSize: 15, fontWeight: FontWeight.bold),
+          ),
+          icon,
+        ],
+      ),
     );
   }
 
