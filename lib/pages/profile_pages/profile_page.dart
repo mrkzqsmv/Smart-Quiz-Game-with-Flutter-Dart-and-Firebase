@@ -1,14 +1,12 @@
-import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:tetbiq/add_quizes/add_quiz.dart';
+import 'package:tetbiq/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tetbiq/pages/login_and_register/login_page.dart';
+import 'package:tetbiq/pages/profile_pages/settings_page.dart';
 import 'package:tetbiq/pages/profile_pages/users_profile.dart';
 import 'package:tetbiq/quizes/categories.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
@@ -39,6 +37,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // bottomNavigationBar: const BottomNavBar(),
         backgroundColor: Colors.deepPurple,
         body: SingleChildScrollView(
           child: Padding(
@@ -55,7 +54,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ClipOval(
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
                           'assets/images/user.jpg',
                           width: 60,
@@ -65,8 +65,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: 10,
                       ),
                       Text(
-                        'Hi, New User',
-                        style: GoogleFonts.quando(
+                        'Salam, Yeni İstifadəçi',
+                        style: GoogleFonts.roboto(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black),
@@ -85,7 +85,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                   );
                                 } catch (e) {
-                                  print(e);
+                                  debugPrint(e.toString());
                                 }
                               },
                               icon: const Icon(
@@ -112,19 +112,19 @@ class _ProfilePageState extends State<ProfilePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           createColumn(
-                              'My Quiz',
+                              'Suallarım',
                               const Icon(
                                 Ionicons.file_tray,
                                 size: 30,
                               )),
                           createColumn(
-                              'Plays',
+                              'Oyna',
                               const Icon(
                                 Ionicons.play,
                                 size: 30,
                               )),
                           createColumn(
-                              'Players',
+                              'Oyunçular',
                               const Icon(
                                 Ionicons.people,
                                 size: 30,
@@ -147,8 +147,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Play Braingames together\nwith your friends now',
-                        style: GoogleFonts.quando(
+                        'İndi dostlarınızla birlikdə Braingame oynayın',
+                        style: GoogleFonts.roboto(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -165,7 +165,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const UsersPage()));
                           },
-                          child: const Text('Find Friends'))
+                          child: const Text('Dostları əlavə et'))
                     ],
                   ),
                 ),
@@ -173,7 +173,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   height: 20,
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10)),
@@ -183,8 +183,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Discover Quiz',
-                            style: GoogleFonts.quando(
+                            'Yeni suallar kəşf et',
+                            style: GoogleFonts.roboto(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                           TextButton(
@@ -196,7 +196,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           const Categories()));
                             },
                             child: Text(
-                              'See All',
+                              'Hamısını gör',
                               style: GoogleFonts.quando(
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             ),
@@ -206,21 +206,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     ],
                   ),
                 ),
-                // ListView(
-                //   scrollDirection: Axis.horizontal,
-                //   children: [
-                //     buildContainer(
-                //       'assets/images/first_img.png',
-                //       'Walk around the world\n with Geography Quiz',
-                //       'Dewayne Jaden',
-                //     ),
-                //     buildContainer(
-                //       'assets/images/second_img.png',
-                //       'How smart are you?\nProve your knowledge',
-                //       'Katie Madeline',
-                //     ),
-                //   ],
-                // ),
                 Container(
                     margin: const EdgeInsets.symmetric(
                         vertical: 23.0, horizontal: 6),
@@ -232,10 +217,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           width: 160.0,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                'assets/images/first_img.png',
-                                width: 120,
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/images/first_img.png',
+                                  width: 120,
+                                ),
                               ),
                               Text(
                                 'Walk around the world with\nGeography Quiz',
@@ -250,11 +239,15 @@ class _ProfilePageState extends State<ProfilePage> {
                         Container(
                           width: 160.0,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Image.asset(
-                                'assets/images/second_img.png',
-                                width: 120,
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/images/second_img.png',
+                                  width: 120,
+                                ),
                               ),
                               Text(
                                 'Walk around the world with\n Geography Quiz',
@@ -271,9 +264,12 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Image.asset(
-                                'assets/images/third_img.png',
-                                width: 120,
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.asset(
+                                  'assets/images/third_img.png',
+                                  width: 120,
+                                ),
                               ),
                               Text(
                                 'Walk around the world with\n Geography Quiz',
@@ -295,15 +291,15 @@ class _ProfilePageState extends State<ProfilePage> {
                   },
                   child: const ButtonWidget(
                       color: Colors.white,
-                      text: 'Categories',
+                      text: 'Kateqoriyalar',
                       txtColor: Colors.deepPurple),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Top Authors',
-                      style: GoogleFonts.quando(
+                      'Ən yaxşı müəlliflər',
+                      style: GoogleFonts.roboto(
                           fontSize: 20,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
@@ -351,11 +347,17 @@ class _ProfilePageState extends State<ProfilePage> {
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: Column(
         children: [
-          Image.asset(
-            imgPath,
-            width: 70,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: Image.asset(
+              imgPath,
+              width: 70,
+            ),
           ),
-          Text(title),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+          ),
           Text(authorName),
         ],
       ),
@@ -364,13 +366,16 @@ class _ProfilePageState extends State<ProfilePage> {
 
   buildAuthorContainer(String imgPath, String authorName) {
     return Container(
+      alignment: Alignment.center,
       width: 160.0,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            imgPath,
-            width: 120,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(70),
+            child: Image.asset(
+              imgPath,
+              width: 120,
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -386,3 +391,58 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+
+
+
+
+
+
+
+// class MyHomePage extends StatefulWidget {
+//   @override
+//   _MyHomePageState createState() => _MyHomePageState();
+// }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _currentIndex = 0;
+
+//   final List<Widget> _pages = [
+//     ProfilePage(),
+//     AddQuizScreen(),
+//     SettingsScreen(),
+//     UsersPage()
+//   ];
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: _pages[_currentIndex],
+//       bottomNavigationBar: BottomNavigationBar(
+//         currentIndex: _currentIndex,
+//         onTap: (index) {
+//           setState(() {
+//             _currentIndex = index;
+//           });
+//         },
+//         items: const [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.people),
+//             label: 'Users',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.quiz),
+//             label: 'Add Quiz',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.settings),
+//             label: 'Settings',
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

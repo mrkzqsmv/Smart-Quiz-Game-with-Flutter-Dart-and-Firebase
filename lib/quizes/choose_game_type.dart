@@ -28,8 +28,8 @@ class _ChooseGameTypeState extends State<ChooseGameType> {
           borderRadius: BorderRadius.circular(20),
         ),
         title: Text(
-          'Quiz Types',
-          style: GoogleFonts.quando(
+          'Sual növləri',
+          style: GoogleFonts.roboto(
             fontSize: 25,
             fontWeight: FontWeight.bold,
           ),

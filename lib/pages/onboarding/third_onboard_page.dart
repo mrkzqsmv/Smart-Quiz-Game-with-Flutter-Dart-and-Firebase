@@ -25,15 +25,18 @@ class _ThirdOnboardPageState extends State<ThirdOnboardPage> {
                 const SizedBox(
                   height: 40,
                 ),
-                Image.asset(
-                  'assets/images/third_img.png',
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    'assets/images/third_img.png',
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 Text(
-                  'Play with Friends',
-                  style: GoogleFonts.quando(
+                  'Dostlarla oynayın',
+                  style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
@@ -42,8 +45,8 @@ class _ThirdOnboardPageState extends State<ThirdOnboardPage> {
                   height: 20,
                 ),
                 Text(
-                  'Participate in quiz challenges and compete with your friends for and interactive and entertaining experience.',
-                  style: GoogleFonts.quando(
+                  'Viktorina problemlərində iştirak edin və interaktiv və əyləncəli təcrübə üçün dostlarınızla rəqabət aparın.',
+                  style: GoogleFonts.roboto(
                     color: Colors.grey.shade600,
                     fontSize: 20,
                   ),
@@ -63,7 +66,7 @@ class _ThirdOnboardPageState extends State<ThirdOnboardPage> {
                 },
                   child: const ButtonWidget(
                     color: Colors.deepPurple,
-                    text: 'Ready to Register',
+                    text: 'Qeydiyyat',
                     txtColor: Colors.white,
                   ),
                 ),
@@ -78,7 +81,7 @@ class _ThirdOnboardPageState extends State<ThirdOnboardPage> {
                 },
                   child: const ButtonWidget(
                     color: Colors.deepPurple,
-                    text: 'Sign In',
+                    text: 'Giriş',
                     txtColor: Colors.white,
                   ),
                 )

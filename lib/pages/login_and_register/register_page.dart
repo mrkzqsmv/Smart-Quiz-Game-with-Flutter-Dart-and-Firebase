@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tetbiq/pages/profile_pages/profile_page.dart';
-import 'package:tetbiq/pages/provider/auth_provider.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,7 +27,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     fullNameController.dispose();
     emailController.dispose();
@@ -79,7 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text(
-          'Register New Account',
+          'Qeydiyyatdan Keçin',
           style: GoogleFonts.quando(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -97,11 +95,12 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 20,
             ),
             Text(
-              'Create an account to join the quiz',
+              'Viktorinaya qoşulmaq üçün hesab yaradın',
               style: GoogleFonts.quando(
                 color: Colors.white,
                 fontSize: 20,
               ),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 20,
@@ -122,13 +121,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: fullNameController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter your full name';
+                            return 'Ad və soyadınızı daxil edin';
                           }
                           return null;
                         },
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Full Name',
+                          hintText: 'Ad və Soyad',
                         ),
                       ),
                     ),
@@ -145,7 +144,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: emailController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter your email address';
+                            return 'Email adresinizi daxil edin';
                           }
                           return null;
                         },
@@ -168,14 +167,14 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: passwordController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter your password';
+                            return 'Şifrənizi daxil edin';
                           }
                           return null;
                         },
                         obscureText: true,
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Password',
+                          hintText: 'Şifrə',
                         ),
                       ),
                     ),
@@ -192,13 +191,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: countryController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter your country';
+                            return 'Ölkə daxil edin';
                           }
                           return null;
                         },
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Country',
+                          hintText: 'Ölkə',
                         ),
                       ),
                     ),
@@ -215,13 +214,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         controller: ageController,
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'Enter your age';
+                            return 'Yaşınızı daxil edin';
                           }
                           return null;
                         },
                         decoration: const InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Age',
+                          hintText: 'Yaş',
                         ),
                       ),
                     ),
@@ -264,7 +263,7 @@ class _RegisterPageState extends State<RegisterPage> {
               },
               child: const ButtonWidget(
                 color: Colors.white,
-                text: 'Register Now',
+                text: 'Qeydiyyatdan keç',
                 txtColor: Colors.deepPurple,
               ),
             ),

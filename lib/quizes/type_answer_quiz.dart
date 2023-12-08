@@ -51,17 +51,17 @@ class TypeAnswerQuiz extends StatefulWidget {
 class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
   List<QuizQuestion> quizQuestions = [
     QuizQuestion(
-      question: "Türkiye'nin başkenti neresidir?",
+      question: "Türkiyənin paytaxtı haradır?",
       options: ["Ankara", "İstanbul", "İzmir", "Bursa"],
       correctOptionIndex: 0,
     ),
     QuizQuestion(
-      question: "The Beatles hangi ülkeden bir müzik grubudur?",
-      options: ["İngiltere", "ABD", "Kanada", "Avustralya"],
+      question: "The Beatles hansı ölkədən olan musiqi qrupudur?",
+      options: ["Ingiltərə", "America", "Kanada", "Avstraliya"],
       correctOptionIndex: 0,
     ),
     QuizQuestion(
-      question: "Inception filmi hangi yönetmen tarafından yönetilmiştir?",
+      question: "Başlanğıc filminin rejissoru hansı rejissordur?",
       options: [
         "Christopher Nolan",
         "Quentin Tarantino",
@@ -71,12 +71,12 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       correctOptionIndex: 0,
     ),
     QuizQuestion(
-      question: "Jupiter'in kaç tane uyduyu vardır?",
+      question: "Yupiterin neçə peyki var?",
       options: ["67", "79", "63", "52"],
       correctOptionIndex: 1,
     ),
     QuizQuestion(
-      question: "DNA'nın tam anlamı nedir?",
+      question: "DNT tam olaraq nə deməkdir?",
       options: [
         "Deoxyribonucleic Acid",
         "Digital Nucleic Assembly",
@@ -86,7 +86,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       correctOptionIndex: 0,
     ),
     QuizQuestion(
-      question: "Hangi ünlü ressam 'Yıldızlı Gece' tablosunu yapmıştır?",
+      question: "“Ulduzlu gecə” əsərini hansı məşhur rəssam çəkib?",
       options: [
         "Leonardo da Vinci",
         "Vincent van Gogh",
@@ -96,18 +96,18 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       correctOptionIndex: 1,
     ),
     QuizQuestion(
-      question: "Hangi gezegen Güneş Sistemi'ndeki en büyük gezegendir?",
-      options: ["Mars", "Satürn", "Jüpiter", "Venüs"],
+      question: "Günəş sistemindəki ən böyük planet hansı planetdir?",
+      options: ["Mars", "Saturn", "Yupiter", "Venera"],
       correctOptionIndex: 2,
     ),
     QuizQuestion(
-      question: "Hangi müzik türü 'Rock and Roll' müziğin öncüsüdür?",
+      question: "Rok və Roll\" musiqisinin yaradıcısı hansı musiqi janrıdır?",
       options: ["Jazz", "Blues", "Country", "Rap"],
       correctOptionIndex: 1,
     ),
     QuizQuestion(
       question:
-          "Hangi film serisi 'Harry Potter' adlı sihirli bir karakteri konu alır?",
+          "Hansı film seriyası 'Harri Potter' adlı sehrli personajdan bəhs edir?",
       options: [
         "The Lord of the Rings",
         "Star Wars",
@@ -117,20 +117,35 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       correctOptionIndex: 3,
     ),
     QuizQuestion(
-      question: "Hangi ülke Moai heykelleri ile ünlüdür?",
-      options: ["Japonya", "Peru", "Meksika", "Şili"],
+      question: "Moai heykəlləri ilə hansı ölkə məşhurdur?",
+      options: ["Yaponiya", "Peru", "Meksika", "Şili"],
       correctOptionIndex: 3,
     ),
     QuizQuestion(
-      question: "Flutter hangi programlama dilinde yazılmıştır?",
-      options: ["Dart", "Java", "C++", "Python"],
-      correctOptionIndex: 0,
-    ),
+        question: 'Dünya üzərində ən böyük ölkə hansıdır?',
+        options: ["Rusiya", "Çin", "ABŞ", "Kanada"],
+        correctOptionIndex: 0),
     QuizQuestion(
-      question: "Flutter'ın önceki ismi nedir?",
-      options: ["Sky", "Bird", "Fire", "Light"],
-      correctOptionIndex: 0,
-    ),
+        question: 'Qurtarmaqal hansı suda yaşayır??',
+        options: [
+          "Qara Dəniz",
+          "Şimal Buz Dənizi",
+          "Şimali Atlantika",
+          "Hind Okeanı"
+        ],
+        correctOptionIndex: 1),
+    QuizQuestion(
+        question: 'Aztək imperiyası hansı ərazidə var idi??',
+        options: ["Avropa", "Afrika", "Şərq Asiya", "Cənubi Amerika"],
+        correctOptionIndex: 3),
+    QuizQuestion(
+        question: 'Ən qabaqcıl proqramlaşdırma dil hansıdır?',
+        options: ["C++", "Java", "Python", "Fortran"],
+        correctOptionIndex: 2),
+    QuizQuestion(
+        question: 'Ən uzun çay hansıdır?',
+        options: ["Amazon çayı", "Nil çayı", "Yangzi çayı", "Mississippi çayı"],
+        correctOptionIndex: 2),
   ];
 
   int currentQuestionIndex = 0;

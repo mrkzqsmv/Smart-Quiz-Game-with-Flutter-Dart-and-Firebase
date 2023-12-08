@@ -20,7 +20,7 @@ List<TrueFalseQuestion> getQuestions() {
   List<TrueFalseQuestion> questionlist = [];
   questionlist.add(
     TrueFalseQuestion(
-      'New York City is the capital of the United States.',
+      'Nyu-York şəhəri ABŞ-ın paytaxtıdır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: false),
         TrueFalseAnswer(answerText: 'False', isCorrect: true),
@@ -29,7 +29,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'The Earth is flat.',
+      'Yer düzdür.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: false),
         TrueFalseAnswer(answerText: 'False', isCorrect: true),
@@ -38,7 +38,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'Water boils at 100 degrees Celsius at sea level.',
+      'Su dəniz səviyyəsində 100 dərəcə Selsidə qaynayır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: true),
         TrueFalseAnswer(answerText: 'False', isCorrect: false),
@@ -47,7 +47,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'Washington is the capital of America.',
+      'Vaşinqton Amerikanın paytaxtıdır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: true),
         TrueFalseAnswer(answerText: 'False', isCorrect: false),
@@ -56,7 +56,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'The Great Wall of China is the longest wall in the world.',
+      'Böyük Çin Səddin dünyanın ən uzun divarıdır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: true),
         TrueFalseAnswer(answerText: 'False', isCorrect: false),
@@ -65,7 +65,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'The currency of Japan is the Yuan.',
+      'Yaponiyanın pul vahidi yuandır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: false),
         TrueFalseAnswer(answerText: 'False', isCorrect: true),
@@ -83,7 +83,7 @@ List<TrueFalseQuestion> getQuestions() {
   );
   questionlist.add(
     TrueFalseQuestion(
-      'The Nile River is the longest river in the world.',
+      'Everest dağı dünyanın ən hündür dağıdır.',
       [
         TrueFalseAnswer(answerText: 'True', isCorrect: false),
         TrueFalseAnswer(answerText: 'False', isCorrect: true),

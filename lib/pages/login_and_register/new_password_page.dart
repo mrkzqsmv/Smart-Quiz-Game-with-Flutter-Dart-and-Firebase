@@ -12,7 +12,7 @@ class CreateNewPasswordPage extends StatefulWidget {
 class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
   var isLoading = true;
   void toogleModalBottom(){
-    Future.delayed(Duration(seconds: 2),(){
+    Future.delayed(const Duration(seconds: 2),(){
       setState(() {
         isLoading = !isLoading;
       });
@@ -27,8 +27,8 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Text(
-            'Forgot Password ?',
-            style: GoogleFonts.quando(fontWeight: FontWeight.bold),
+            'Şifrəni unutmusunuz ?',
+            style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
           leading: IconButton(
@@ -45,9 +45,9 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                 height: 15,
               ),
               Text(
-                'Please create new password. We recommend to not use same password as previos',
+                'Zəhmət olmasa yeni parol yaradın. Əvvəlki parollarla eyni paroldan istifadə etməməyi tövsiyə edirik',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.quando(
+                style: GoogleFonts.roboto(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
@@ -67,7 +67,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Enter New Password',
+                      hintText: 'Yeni şifrəni daxil edin',
                     ),
                   ),
                 ),
@@ -84,7 +84,7 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                     obscureText: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Confirm New Password',
+                      hintText: 'Yeni şifrəni təkrar daxil edin',
                     ),
                   ),
                 ),
@@ -94,19 +94,19 @@ class _CreateNewPasswordPageState extends State<CreateNewPasswordPage> {
                 onTap: (){
                   
                   showModalBottomSheet(context: context, builder: (context){
-                    return Container(
+                    return SizedBox(
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height/2,
                       child: Center(
-                        child: isLoading ? CircularProgressIndicator()
-                        : Icon(Icons.check),
+                        child: isLoading ? const CircularProgressIndicator()
+                        : const Icon(Icons.check),
                       ),
                     );
                   });
                 },
                 child: const ButtonWidget(
                   color: Colors.white,
-                  text: 'Change Password',
+                  text: 'Şifrəni dəyiş',
                   txtColor: Colors.deepPurple,
                 ),
               ),

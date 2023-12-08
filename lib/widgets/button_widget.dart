@@ -30,7 +30,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         child: Center(
           child: Text(
             widget.text,
-            style: GoogleFonts.quando(
+            style: GoogleFonts.roboto(
               color: widget.txtColor,
               fontSize: 15
             ),

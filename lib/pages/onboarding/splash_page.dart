@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tetbiq/pages/onboarding/first_onboard_page.dart';
+import 'package:ionicons/ionicons.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -13,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -34,9 +35,9 @@ class _SplashPageState extends State<SplashPage> {
               const SizedBox(
                 height: 40,
               ),
-              FlutterLogo(
-                size: MediaQuery.of(context).size.width / 2,
-              ),
+              Icon(Ionicons.logo_alipay,
+              size: MediaQuery.of(context).size.width / 2,
+              color: Colors.white,),
               const SizedBox(
                 height: 10,
               ),
@@ -47,7 +48,7 @@ class _SplashPageState extends State<SplashPage> {
                   fontSize: 25,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               const CircularProgressIndicator(
                 color: Colors.white,
               ),

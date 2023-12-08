@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ionicons/ionicons.dart';
 import 'package:tetbiq/quizes/choose_game_type.dart';
-import 'package:tetbiq/quizes/first_quiz_game.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -13,15 +11,15 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   List<String> categories = [
-    'Mixed Questions',
-    'Movie',
-    'Music',
-    'Education',
-    'Country',
-    'Games',
-    'Business',
-    'Science',
-    'General Knowledge',
+    'Qarışıq Suallar',
+    'Film',
+    'Musiqi',
+    'Təhsil',
+    'Ölkə',
+    'Oyun',
+    'Biznes',
+    'Elm',
+    'Ümumi bilik',
   ];
 
   List<Icon> icons = [
@@ -64,7 +62,7 @@ class _CategoriesState extends State<Categories> {
               ),
               title: Text(
                 categories[index].toUpperCase(),
-                style: GoogleFonts.quando(
+                style: GoogleFonts.roboto(
                     fontSize: 20, fontWeight: FontWeight.w500),
               ),
               trailing: IconButton(

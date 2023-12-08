@@ -2,9 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import 'package:tetbiq/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tetbiq/pages/login_and_register/forgot_password_page.dart';
-import 'package:tetbiq/pages/profile_pages/profile_page.dart';
-import 'package:tetbiq/pages/provider/auth_provider.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -29,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Text(
-            'Sign In to Account',
+            'Giriş',
             style: GoogleFonts.quando(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
@@ -48,8 +47,8 @@ class _LoginPageState extends State<LoginPage> {
                     height: 5,
                   ),
                   Text(
-                    'Login to access the quiz',
-                    style: GoogleFonts.quando(
+                    'Kvizə daxil olmaq üçün giriş edin',
+                    style: GoogleFonts.roboto(
                       color: Colors.white,
                       fontSize: 20,
                     ),
@@ -73,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                               controller: emailController,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your email';
+                                  return 'Email adresinizi daxil edin';
                                 }
                                 return null;
                               },
@@ -97,13 +96,13 @@ class _LoginPageState extends State<LoginPage> {
                               obscureText: true,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  return 'Please enter your password';
+                                  return 'Şifrənizi daxil edin';
                                 }
                                 return null;
                               },
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Password',
+                                hintText: 'Şifrə',
                               ),
                             ),
                           ),
@@ -121,8 +120,8 @@ class _LoginPageState extends State<LoginPage> {
                       );
                     },
                     child: Text(
-                      'Forgot Password ?',
-                      style: GoogleFonts.quando(
+                      'Şifrəni unutmuşam ?',
+                      style: GoogleFonts.roboto(
                         color: Colors.white,
                       ),
                     ),
@@ -155,12 +154,12 @@ class _LoginPageState extends State<LoginPage> {
                         final email = emailController.text;
                         final password = passwordController.text;
                         auth.signInWithEmailAndPassword(email: email,password: password);
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> BottomNavBar()));
                       }
                     },
                     child: const ButtonWidget(
                         color: Colors.white,
-                        text: 'Sign In Now',
+                        text: 'Giriş et',
                         txtColor: Colors.deepPurple),
                   ),
                   const SizedBox(

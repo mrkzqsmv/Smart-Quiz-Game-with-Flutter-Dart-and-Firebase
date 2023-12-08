@@ -20,8 +20,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           title: Text(
-            'Forgot Password ?',
-            style: GoogleFonts.quando(fontWeight: FontWeight.bold),
+            'Şifrəni unutmuşam ?',
+            style: GoogleFonts.roboto(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
           leading: IconButton(
@@ -39,9 +39,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   height: 15,
                 ),
                 Text(
-                  'Enter your email address to get an OTP code to reset your password.',
+                  'Parolunuzu sıfırlamaq üçün OTP kodu əldə etmək üçün e-poçt ünvanınızı daxil edin.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.quando(
+                  style: GoogleFonts.roboto(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
@@ -73,7 +73,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   },
                   child: const ButtonWidget(
                       color: Colors.white,
-                      text: 'Continue',
+                      text: 'Davam et',
                       txtColor: Colors.deepPurple),
                 ),
                 const SizedBox(

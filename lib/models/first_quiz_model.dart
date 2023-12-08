@@ -21,122 +21,123 @@ List<Question> getQuestions() {
   //add questions and answers here
   list.add(
     Question(
-      'What is the largest mammal on Earth?',
+      'Dünyanın ən böyük məməlisi hansıdır?',
       [
-        Answer(answerText: 'Blue Whale', isCorrect: true),
-        Answer(answerText: 'Elephant', isCorrect: false),
-        Answer(answerText: 'Giraffe', isCorrect: false),
-        Answer(answerText: 'Hippopotamus', isCorrect: false),
+        Answer(answerText: 'Mavi balina', isCorrect: true),
+        Answer(answerText: 'Fil', isCorrect: false),
+        Answer(answerText: 'Qiraf', isCorrect: false),
+        Answer(answerText: 'İppopotam', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'In which year did the Titanic sink?',
+      'Bir saat neçə dəqiqədir ?',
       [
-        Answer(answerText: '1912', isCorrect: true),
-        Answer(answerText: '1905', isCorrect: false),
-        Answer(answerText: '1925', isCorrect: false),
-        Answer(answerText: '1930', isCorrect: false),
+        Answer(answerText: '60 dəqiqə', isCorrect: true),
+        Answer(answerText: '45 dəqiqə', isCorrect: false),
+        Answer(answerText: '30 dəqiqə', isCorrect: false),
+        Answer(answerText: '90 dəqiqə', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'Who painted the Mona Lisa?',
+      'Monna Liza kim tərəfindən çəkilmişdir?',
       [
-        Answer(answerText: 'Leonardo da Vinci', isCorrect: true),
-        Answer(answerText: 'Vincent van Gogh', isCorrect: false),
-        Answer(answerText: 'Pablo Picasso', isCorrect: false),
-        Answer(answerText: 'Claude Monet', isCorrect: false),
+        Answer(answerText: 'Leonardo da Vinçi', isCorrect: true),
+        Answer(answerText: 'Vincent van Qoq', isCorrect: false),
+        Answer(answerText: 'Pablo Pikasso', isCorrect: false),
+        Answer(answerText: 'Klod Mone', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'Which element has the chemical symbol "H"?',
+      'Hansı elementin kimyəvi simvolu "H"-dır?',
       [
-        Answer(answerText: 'Hydrogen', isCorrect: true),
-        Answer(answerText: 'Helium', isCorrect: false),
-        Answer(answerText: 'Oxygen', isCorrect: false),
-        Answer(answerText: 'Nitrogen', isCorrect: false),
+        Answer(answerText: 'Hidrogen', isCorrect: true),
+        Answer(answerText: 'Gelium', isCorrect: false),
+        Answer(answerText: 'Oksigen', isCorrect: false),
+        Answer(answerText: 'Azot', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'What is the currency of Japan?',
+      'Yaponiyanın valyutası nədir?',
       [
         Answer(answerText: 'Yen', isCorrect: true),
-        Answer(answerText: 'Won', isCorrect: false),
+        Answer(answerText: 'Von', isCorrect: false),
         Answer(answerText: 'Dollar', isCorrect: false),
-        Answer(answerText: 'Euro', isCorrect: false),
+        Answer(answerText: 'Avro', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'Who wrote "To Kill a Mockingbird"?',
+      '"Ürək Saldırmaq Üçün Bülbülü Öldür" kim tərəfindən yazılmışdır?',
       [
-        Answer(answerText: 'Harper Lee', isCorrect: true),
-        Answer(answerText: 'J.K. Rowling', isCorrect: false),
-        Answer(answerText: 'Ernest Hemingway', isCorrect: false),
-        Answer(answerText: 'George Orwell', isCorrect: false),
+        Answer(answerText: 'Harper Li', isCorrect: true),
+        Answer(answerText: 'C.K. Rowling', isCorrect: false),
+        Answer(answerText: 'Ərnst Heminqvey', isCorrect: false),
+        Answer(answerText: 'Corc Oruell', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'What is the capital of Brazil?',
+      'Braziliyanın paytaxtı hansıdır?',
       [
-        Answer(answerText: 'Brasília', isCorrect: true),
-        Answer(answerText: 'Rio de Janeiro', isCorrect: false),
-        Answer(answerText: 'Sao Paulo', isCorrect: false),
-        Answer(answerText: 'Buenos Aires', isCorrect: false),
+        Answer(answerText: 'Brasiliya', isCorrect: true),
+        Answer(answerText: 'Rio de Janeyro', isCorrect: false),
+        Answer(answerText: 'San Paulo', isCorrect: false),
+        Answer(answerText: 'Buenos Ayres', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'Which famous scientist developed the theory of general relativity?',
+      'Kimyəvi nisbətdə genərləşmə teorisini kim təklif edib?',
       [
-        Answer(answerText: 'Albert Einstein', isCorrect: true),
-        Answer(answerText: 'Isaac Newton', isCorrect: false),
-        Answer(answerText: 'Galileo Galilei', isCorrect: false),
-        Answer(answerText: 'Stephen Hawking', isCorrect: false),
+        Answer(answerText: 'Albert Aynshteyn', isCorrect: true),
+        Answer(answerText: 'İsaak Nüton', isCorrect: false),
+        Answer(answerText: 'Qalileo Qalilei', isCorrect: false),
+        Answer(answerText: 'Stiven Haukinq', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'What is the largest ocean on Earth?',
+      'Dünyanın ən böyük okeanı hansıdır?',
       [
-        Answer(answerText: 'Pacific Ocean', isCorrect: true),
-        Answer(answerText: 'Atlantic Ocean', isCorrect: false),
-        Answer(answerText: 'Indian Ocean', isCorrect: false),
-        Answer(answerText: 'Arctic Ocean', isCorrect: false),
+        Answer(answerText: 'Pasifik Okeanı', isCorrect: true),
+        Answer(answerText: 'Atlantik Okeanı', isCorrect: false),
+        Answer(answerText: 'Hind Okeanı', isCorrect: false),
+        Answer(answerText: 'Arktik Okeanı', isCorrect: false),
       ],
     ),
   );
 
   list.add(
     Question(
-      'Who is known as the "Father of Computers"?',
+      '"Kompüterlərin atası" kimi tanınan kimdir?',
       [
-        Answer(answerText: 'Charles Babbage', isCorrect: true),
-        Answer(answerText: 'Alan Turing', isCorrect: false),
-        Answer(answerText: 'Steve Jobs', isCorrect: false),
-        Answer(answerText: 'Bill Gates', isCorrect: false),
+        Answer(answerText: 'Çarlz Babac', isCorrect: true),
+        Answer(answerText: 'Alan Tyrinq', isCorrect: false),
+        Answer(answerText: 'Stiv Coxs', isCorrect: false),
+        Answer(answerText: 'Bill Qeyts', isCorrect: false),
       ],
     ),
   );
+
   return list;
 }

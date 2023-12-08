@@ -28,11 +28,13 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
         shadowColor: Colors.black,
         elevation: 20,
         centerTitle: true,
-        title: Text('Quiz',
-        style: GoogleFonts.quando(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-        ),),
+        title: Text(
+          'Quiz',
+          style: GoogleFonts.roboto(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop();
@@ -43,13 +45,6 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
         ),
       ),
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image:
-                AssetImage('assets/images/background_image _for_project.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
           child: Column(
@@ -71,8 +66,8 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-            'Question ${currentQuestionIndex + 1}/${questionList.length.toString()}',
-            style: GoogleFonts.quando(
+            'Sual ${currentQuestionIndex + 1}/${questionList.length.toString()}',
+            style: GoogleFonts.roboto(
               color: Colors.black,
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -90,7 +85,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
           width: double.infinity,
           child: Text(
             questionList[currentQuestionIndex].questionText,
-            style: GoogleFonts.quando(
+            style: GoogleFonts.roboto(
               fontSize: 20,
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -122,12 +117,13 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
-      height: 48,
+      height: 55,
       child: ElevatedButton(
         onPressed: () {
           if (selectedAnswer == null) {
             if (answer.isCorrect) {
               score++;
+              print(true);
             }
             setState(() {
               selectedAnswer = answer;
@@ -168,7 +164,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
           backgroundColor: Colors.blueAccent,
           foregroundColor: Colors.white,
         ),
-        child: Text(isLastQuestion ? 'Submit' : 'Next'),
+        child: Text(isLastQuestion ? 'Təsdiqlə' : 'Növbəti'),
       ),
     );
   }
@@ -178,7 +174,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
     if (score >= questionList.length * 0.5) {
       isPassed = true;
     }
-    String title = isPassed ? 'Passed' : 'Failed';
+    String title = isPassed ? 'Təbriklər' : 'Yenidən cəhd edin';
     return AlertDialog(
         title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -191,7 +187,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
                   fontWeight: FontWeight.w300),
             ),
             Text(
-              'Score:   ${score.toString()}',
+              'Hesab:   ${score.toString()}',
               style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -208,7 +204,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
                   ),
                 );
               },
-              child: const Text('Go to Game types'),
+              child: const Text('Oyun növlərinə keçid edin'),
             ),
           ],
         ),
@@ -222,7 +218,7 @@ class _FirstQuizGameState extends State<FirstQuizGame> {
               selectedAnswer = null;
             });
           },
-          child: const Text('Restart'),
+          child: const Text('Yenidən başlayın'),
         ));
   }
 }

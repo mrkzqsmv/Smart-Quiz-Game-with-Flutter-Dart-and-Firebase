@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tetbiq/quizes/choose_game_type.dart';
@@ -52,7 +50,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-            'Question ${currentQuestionIndex + 1}/${questionList.length.toString()}',
+            'Sual ${currentQuestionIndex + 1}/${questionList.length.toString()}',
             style: GoogleFonts.quando(
               color: Colors.black,
               fontSize: 20,
@@ -71,7 +69,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
           width: double.infinity,
           child: Text(
             questionList[currentQuestionIndex].questionText,
-            style: GoogleFonts.quando(
+            style: GoogleFonts.roboto(
               fontSize: 20,
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -149,7 +147,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
           backgroundColor: Colors.blueAccent,
           foregroundColor: Colors.white,
         ),
-        child: Text(isLastQuestion ? 'Submit' : 'Next'),
+        child: Text(isLastQuestion ? 'Təsdiqlə' : 'Növbəti'),
       ),
     );
   }
@@ -159,7 +157,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
     if (score >= questionList.length * 0.5) {
       isPassed = true;
     }
-    String title = isPassed ? 'Passed' : 'Failed';
+    String title = isPassed ? 'Təbriklər' : 'Yenidən cəhd edin';
     return AlertDialog(
       title: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -170,7 +168,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.w300),
           ),
           Text(
-            'Score:   ${score.toString()}',
+            'Hesab:   ${score.toString()}',
             style: const TextStyle(
                 color: Colors.white, fontSize: 24, fontWeight: FontWeight.w300),
           ),
@@ -185,7 +183,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
                 ),
               );
             },
-            child: const Text('Go to Game types'),
+            child: const Text('Oyun tiplərinə geri dön'),
           ),
         ],
       ),
@@ -199,7 +197,7 @@ class _TrueorFalseQuizState extends State<TrueorFalseQuiz> {
             selectedAnswer = null;
           });
         },
-        child: const Text('Restart'),
+        child: const Text('Yenidən başla'),
       ),
     );
   }

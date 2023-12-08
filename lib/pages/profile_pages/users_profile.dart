@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 
 class UsersPage extends StatefulWidget {
   const UsersPage({super.key});
@@ -15,9 +16,10 @@ class _UsersPageState extends State<UsersPage> {
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
-          'Users',
-          style: GoogleFonts.quando(
+          'İstifadəçilər',
+          style: GoogleFonts.roboto(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -70,6 +72,11 @@ class _UsersPageState extends State<UsersPage> {
                                   ],
                                 ),
                               ),
+                              const CircleAvatar(
+                                child: Icon(
+                                  Icons.add,
+                                ),
+                              )
                             ],
                           )),
                     );

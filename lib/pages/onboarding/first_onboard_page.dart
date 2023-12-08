@@ -23,15 +23,18 @@ class _FirstOnboardPageState extends State<FirstOnboardPage> {
               const SizedBox(
                 height: 40,
               ),
-              Image.asset(
-                'assets/images/first_img.png',
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  'assets/images/first_img.png',
+                ),
               ),
               const SizedBox(
                 height: 30,
               ),
               Text(
-                'Great Mobility for you',
-                style: GoogleFonts.quando(
+                'Sizin üçün əla Mobillik',
+                style: GoogleFonts.roboto(
                     color: Colors.black,
                     fontSize: 25,
                     fontWeight: FontWeight.bold),
@@ -40,8 +43,8 @@ class _FirstOnboardPageState extends State<FirstOnboardPage> {
                 height: 20,
               ),
               Text(
-                'Generate, distrubute, and engage with AzerIntel at your convenience, anytime and anywhere you prefer.',
-                style: GoogleFonts.quando(
+                'AzerIntel ilə rahatlıqla əlaqə qurun, təmin edin və istədiyiniz zaman və istədiyiniz yerdə iştirak edin.',
+                style: GoogleFonts.roboto(
                   color: Colors.grey.shade600,
                   fontSize: 20,
                 ),
@@ -61,7 +64,7 @@ class _FirstOnboardPageState extends State<FirstOnboardPage> {
                 },
                 child: const ButtonWidget(
                   color: Colors.deepPurple,
-                  text: 'Next',
+                  text: 'Növbəti',
                   txtColor: Colors.white,
                 ),
               ),
@@ -76,7 +79,7 @@ class _FirstOnboardPageState extends State<FirstOnboardPage> {
                 },
                 child: const ButtonWidget(
                   color: Colors.deepPurple,
-                  text: 'Sign In',
+                  text: 'Giriş',
                   txtColor: Colors.white,
                 ),
               )

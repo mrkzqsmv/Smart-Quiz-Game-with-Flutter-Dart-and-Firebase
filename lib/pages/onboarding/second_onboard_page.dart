@@ -25,15 +25,18 @@ class _SecondOnboardPageState extends State<SecondOnboardPage> {
                 const SizedBox(
                   height: 40,
                 ),
-                Image.asset(
-                  'assets/images/second_img.png',
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    'assets/images/second_img.png',
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 Text(
-                  'Fun and Rewarding',
-                  style: GoogleFonts.quando(
+                  'Əyləncəli və Mükafatlandırıcı',
+                  style: GoogleFonts.roboto(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold),
@@ -42,8 +45,8 @@ class _SecondOnboardPageState extends State<SecondOnboardPage> {
                   height: 20,
                 ),
                 Text(
-                  'Discover captivating and enlightening quizzes to enhance your understanding in an enjoyable way.',
-                  style: GoogleFonts.quando(
+                  'Anlayışınızı xoş bir şəkildə artırmaq üçün cazibədar və maarifləndirici viktorinaları kəşf edin.',
+                  style: GoogleFonts.roboto(
                     color: Colors.grey.shade600,
                     fontSize: 20,
                   ),
@@ -63,7 +66,7 @@ class _SecondOnboardPageState extends State<SecondOnboardPage> {
                   },
                   child: const ButtonWidget(
                     color: Colors.deepPurple,
-                    text: 'Next',
+                    text: 'Növbəti',
                     txtColor: Colors.white,
                   ),
                 ),
@@ -78,7 +81,7 @@ class _SecondOnboardPageState extends State<SecondOnboardPage> {
                   },
                   child: const ButtonWidget(
                     color: Colors.deepPurple,
-                    text: 'Sign In',
+                    text: 'Giriş',
                     txtColor: Colors.white,
                   ),
                 )
