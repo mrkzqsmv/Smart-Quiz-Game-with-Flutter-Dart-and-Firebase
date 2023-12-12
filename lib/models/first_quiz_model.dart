@@ -21,12 +21,12 @@ List<Question> getQuestions() {
   //add questions and answers here
   list.add(
     Question(
-      'Dünyanın ən böyük məməlisi hansıdır?',
+      'Monna Liza kim tərəfindən çəkilmişdir?',
       [
-        Answer(answerText: 'Mavi balina', isCorrect: true),
-        Answer(answerText: 'Fil', isCorrect: false),
-        Answer(answerText: 'Qiraf', isCorrect: false),
-        Answer(answerText: 'İppopotam', isCorrect: false),
+        Answer(answerText: 'Leonardo da Vinçi', isCorrect: true),
+        Answer(answerText: 'Vincent van Qoq', isCorrect: false),
+        Answer(answerText: 'Pablo Pikasso', isCorrect: false),
+        Answer(answerText: 'Klod Mone', isCorrect: false),
       ],
     ),
   );

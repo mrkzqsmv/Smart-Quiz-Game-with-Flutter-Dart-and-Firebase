@@ -17,7 +17,7 @@ class _AddQuizMainPageState extends State<AddQuizMainPage> {
   final answer2Controller = TextEditingController();
   final answer3Controller = TextEditingController();
   final answer4Controller = TextEditingController();
-  List<Question> questionList = getQuestions();
+  List<Question> userCreatedQuizes = [];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -87,13 +87,16 @@ class _AddQuizMainPageState extends State<AddQuizMainPage> {
   }
 
   void addNewQuestion() {
-    questionList.add(
-      Question(questionController.text, [
-        Answer(answerText: answer1Controller.text, isCorrect: false),
-        Answer(answerText: answer2Controller.text, isCorrect: true),
-        Answer(answerText: answer3Controller.text, isCorrect: false),
-        Answer(answerText: answer4Controller.text, isCorrect: false),
-      ]),
+    userCreatedQuizes.add(
+      Question(
+        questionController.text,
+        [
+          Answer(answerText: answer1Controller.text, isCorrect: false),
+          Answer(answerText: answer2Controller.text, isCorrect: true),
+          Answer(answerText: answer3Controller.text, isCorrect: false),
+          Answer(answerText: answer4Controller.text, isCorrect: false),
+        ],
+      ),
     );
   }
 }

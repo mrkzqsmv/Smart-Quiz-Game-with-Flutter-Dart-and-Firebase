@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -152,8 +154,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 5,
               ),
               SignInButton(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 Buttons.google,
                 text: "Sign up with Google",
                 onPressed: () {},
@@ -162,20 +166,22 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
               SignInButton(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 Buttons.facebook,
                 text: "Sign up with Facebook",
                 onPressed: () {},
               ),
               const Spacer(),
               InkWell(
-                onTap: () {
+                onTap: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     final email = emailController.text;
                     final password = passwordController.text;
-                    auth.signInWithEmailAndPassword(
+                    await auth.signInWithEmailAndPassword(
                         email: email, password: password);
                     Navigator.push(
                         context,

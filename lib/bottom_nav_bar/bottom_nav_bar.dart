@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:tetbiq/add_quizes/add_quiz.dart';
+import 'package:tetbiq/new_pages/find_friend.dart';
+import 'package:tetbiq/new_pages/home_page.dart';
 import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 import 'package:tetbiq/pages/profile_pages/settings_page.dart';
 import 'package:tetbiq/pages/profile_pages/users_profile.dart';
@@ -17,8 +19,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = const [
-    ProfilePage(),
-    UsersPage(),
+    HomePage(),
+    FindFriend(),
     AddQuizScreen(),
     SettingsScreen()
   ];
@@ -47,8 +49,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Users',
+            icon: Icon(Icons.find_in_page),
+            label: 'Find Friend',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.quiz),

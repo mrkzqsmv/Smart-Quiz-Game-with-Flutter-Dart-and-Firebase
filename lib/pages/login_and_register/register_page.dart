@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tetbiq/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 import 'package:sign_in_button/sign_in_button.dart';
@@ -44,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const ProfilePage(),
+        builder: (context) => const BottomNavBar(),
       ),
     );
 
@@ -232,6 +233,9 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 20,
             ),
             SignInButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               Buttons.google,
               text: "Sign up with Google",
@@ -241,6 +245,9 @@ class _RegisterPageState extends State<RegisterPage> {
               height: 10,
             ),
             SignInButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              ),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
               Buttons.linkedIn,
               text: "Sign up with Facebook",

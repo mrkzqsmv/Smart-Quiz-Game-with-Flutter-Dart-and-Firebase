@@ -44,9 +44,11 @@ class _UsersPageState extends State<UsersPage> {
                               borderRadius: BorderRadius.circular(20)),
                           child: Row(
                             children: [
-                              Image.asset(
-                                'assets/images/user.jpg',
-                                width: 40,
+                              ClipRRect(
+                                child: Image.asset(
+                                  'assets/images/user.jpg',
+                                  width: 40,
+                                ),
                               ),
                               const SizedBox(
                                 width: 8,

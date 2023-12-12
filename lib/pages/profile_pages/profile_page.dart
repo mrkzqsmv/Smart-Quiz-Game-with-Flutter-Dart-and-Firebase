@@ -35,8 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // bottomNavigationBar: const BottomNavBar(),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.grey.shade400,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(13.0),
@@ -47,7 +46,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(10)),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,8 +100,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white.withOpacity(0.6),
+                  ),
                   child: Column(
                     children: [
                       Row(
@@ -141,7 +141,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 60),
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(20)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,7 +158,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple,
+                              backgroundColor: Colors.deepPurple.shade500,
                               foregroundColor: Colors.white,
                               padding: const EdgeInsets.all(15)),
                           onPressed: () {
@@ -175,7 +175,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [

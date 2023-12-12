@@ -12,7 +12,7 @@ class AddQuizScreen extends StatefulWidget {
 }
 
 class _AddQuizScreenState extends State<AddQuizScreen> {
-  List<Question> questionList = getQuestions();
+  List<Question> userCreatedQuizes = [];
   @override
   Widget build(BuildContext context) {
     return SafeArea(

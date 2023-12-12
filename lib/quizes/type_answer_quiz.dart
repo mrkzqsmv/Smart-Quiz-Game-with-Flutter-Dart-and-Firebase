@@ -1,111 +1,111 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tetbiq/pages/profile_pages/profile_page.dart';
 import 'package:tetbiq/widgets/button_widget.dart';
 
 class TypeAnswerQuiz extends StatefulWidget {
+  const TypeAnswerQuiz({super.key});
+
   @override
   _TypeAnswerQuizState createState() => _TypeAnswerQuizState();
 }
 
 class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
+  int score = 0;
   List<QuizQuestion> quizQuestions = [
     QuizQuestion(
       question: "Türkiyənin paytaxtı haradır?",
-      options: ["Ankara", "İstanbul", "İzmir", "Bursa"],
-      correctOptionIndex: 0,
+      correctOptions: ["Ankara", "ankara"],
     ),
     QuizQuestion(
       question: "The Beatles hansı ölkədən olan musiqi qrupudur?",
-      options: ["Ingiltərə", "America", "Kanada", "Avstraliya"],
-      correctOptionIndex: 0,
+      correctOptions: ["İngiltərə", "ingiltərə"],
     ),
     QuizQuestion(
       question: "Başlanğıc filminin rejissoru hansı rejissordur?",
-      options: [
+      correctOptions: [
         "Christopher Nolan",
-        "Quentin Tarantino",
-        "Steven Spielberg",
-        "Martin Scorsese"
+        "christopher nolan",
+        "nolan",
+        "christopher"
       ],
-      correctOptionIndex: 0,
     ),
     QuizQuestion(
       question: "Yupiterin neçə peyki var?",
-      options: ["67", "79", "63", "52"],
-      correctOptionIndex: 1,
+      correctOptions: ["79"],
     ),
     QuizQuestion(
       question: "DNT tam olaraq nə deməkdir?",
-      options: [
+      correctOptions: [
         "Deoxyribonucleic Acid",
-        "Digital Nucleic Assembly",
-        "Diverse Nucleotide Arrangement",
-        "Dynamic Nucleic Acid"
+        "Deoxyribonucleic",
+        "Acid",
+        "deoxyribonucleic acid",
+        "deoxyribonucleic",
+        "acid",
       ],
-      correctOptionIndex: 0,
     ),
     QuizQuestion(
       question: "“Ulduzlu gecə” əsərini hansı məşhur rəssam çəkib?",
-      options: [
-        "Leonardo da Vinci",
+      correctOptions: [
         "Vincent van Gogh",
-        "Pablo Picasso",
-        "Claude Monet"
+        "vincent van Gogh",
+        "Vincent",
+        "Van Gogh",
       ],
-      correctOptionIndex: 1,
     ),
     QuizQuestion(
       question: "Günəş sistemindəki ən böyük planet hansı planetdir?",
-      options: ["Mars", "Saturn", "Yupiter", "Venera"],
-      correctOptionIndex: 2,
+      correctOptions: ["Yupiter", "yupiter"],
     ),
     QuizQuestion(
       question: "Rok və Roll\" musiqisinin yaradıcısı hansı musiqi janrıdır?",
-      options: ["Jazz", "Blues", "Country", "Rap"],
-      correctOptionIndex: 1,
+      correctOptions: ["Blues", "blues"],
     ),
     QuizQuestion(
       question:
           "Hansı film seriyası 'Harri Potter' adlı sehrli personajdan bəhs edir?",
-      options: [
-        "The Lord of the Rings",
-        "Star Wars",
-        "Indiana Jones",
-        "Harry Potter"
+      correctOptions: [
+        "Harry Potter",
+        "Harry",
+        "Potter",
+        "harry",
+        "potter",
       ],
-      correctOptionIndex: 3,
     ),
     QuizQuestion(
       question: "Moai heykəlləri ilə hansı ölkə məşhurdur?",
-      options: ["Yaponiya", "Peru", "Meksika", "Şili"],
-      correctOptionIndex: 3,
+      correctOptions: ["Şili", "şili"],
     ),
     QuizQuestion(
-        question: 'Dünya üzərində ən böyük ölkə hansıdır?',
-        options: ["Rusiya", "Çin", "ABŞ", "Kanada"],
-        correctOptionIndex: 0),
+      question: 'Dünya üzərində ən böyük ölkə hansıdır?',
+      correctOptions: ["Rusiya", "rusiya"],
+    ),
     QuizQuestion(
-        question: 'Qurtarmaqal hansı suda yaşayır??',
-        options: [
-          "Qara Dəniz",
-          "Şimal Buz Dənizi",
-          "Şimali Atlantika",
-          "Hind Okeanı"
-        ],
-        correctOptionIndex: 1),
+      question: 'Aztek imperiyası hansı ərazidə var idi??',
+      correctOptions: [
+        "Cənubi Amerika",
+        "cənubi amerika",
+        "CənubiAmerika",
+        "cənubiamerika",
+      ],
+    ),
     QuizQuestion(
-        question: 'Aztək imperiyası hansı ərazidə var idi??',
-        options: ["Avropa", "Afrika", "Şərq Asiya", "Cənubi Amerika"],
-        correctOptionIndex: 3),
+      question: 'Ən qabaqcıl proqramlaşdırma dil hansıdır?',
+      correctOptions: [
+        "Python",
+        "python",
+      ],
+    ),
     QuizQuestion(
-        question: 'Ən qabaqcıl proqramlaşdırma dil hansıdır?',
-        options: ["C++", "Java", "Python", "Fortran"],
-        correctOptionIndex: 2),
-    QuizQuestion(
-        question: 'Ən uzun çay hansıdır?',
-        options: ["Amazon çayı", "Nil çayı", "Yangzi çayı", "Mississippi çayı"],
-        correctOptionIndex: 2),
+      question: 'Ən uzun çay hansıdır?',
+      correctOptions: [
+        "Amazon",
+        "amazon",
+      ],
+    ),
   ];
 
   int currentQuestionIndex = 0;
@@ -117,9 +117,12 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
       child: Scaffold(
         backgroundColor: Colors.deepPurple.shade100,
         appBar: AppBar(
-          leading: IconButton(onPressed: (){
-            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>const ProfilePage()));
-          }, icon: const Icon(Icons.arrow_back_ios)),
+          leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const ProfilePage()));
+              },
+              icon: const Icon(Icons.arrow_back_ios)),
           shadowColor: Colors.black.withOpacity(0.5),
           elevation: 20,
           shape: RoundedRectangleBorder(
@@ -191,20 +194,31 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
 
   void checkAnswer() {
     String userAnswer = answerController.text;
-    bool isCorrect = quizQuestions[currentQuestionIndex].isCorrect(userAnswer);
+    List<String> correctOptions =
+        quizQuestions[currentQuestionIndex].correctOptions;
+
+    bool isCorrect = false;
+
+    if (userAnswer.isNotEmpty) {
+      isCorrect =
+          correctOptions.any((option) => option.trim() == userAnswer.trim());
+    }
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Cavab'),
-          content: answerController.text.isEmpty
+          content: userAnswer.isEmpty
               ? const Text('Cavabı daxil edin')
               : Text(isCorrect ? 'Doğru!' : 'Yanlış!'),
           actions: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
+                if (isCorrect) {
+                  score++;
+                }
+                Navigator.of(context).pop();
               },
               child: const Text('Tamam'),
             ),
@@ -230,7 +244,7 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text('Sorğu tamamlandı.'),
-            content: const Text('Təbriklər. Sorğunu tamamladınız!'),
+            content: Text('Təbriklər. Sorğunu tamamladınız!\nScore: $score'),
             actions: [
               ElevatedButton(
                 onPressed: () {
@@ -256,17 +270,10 @@ class _TypeAnswerQuizState extends State<TypeAnswerQuiz> {
 
 class QuizQuestion {
   String question;
-  List<String> options;
-  int correctOptionIndex;
+  List<String> correctOptions;
 
   QuizQuestion({
     required this.question,
-    required this.options,
-    required this.correctOptionIndex,
+    required this.correctOptions,
   });
-
-  bool isCorrect(String userAnswer) {
-    int userAnswerIndex = options.indexOf(userAnswer);
-    return userAnswerIndex == correctOptionIndex;
-  }
 }
