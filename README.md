@@ -1,8 +1,8 @@
 # Smart Quiz App with Flutter,Dart and Firebase
 <table>
   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/1.jpeg' width=200 height=1600></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/2.jpeg' width=200 height=1600></td>
+    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/1.jpeg' width=400 height=1000></td>
+    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/2.jpeg' width=400 height=1000></td>
   </tr>
     <tr>
     <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/3.jpeg'></td>
