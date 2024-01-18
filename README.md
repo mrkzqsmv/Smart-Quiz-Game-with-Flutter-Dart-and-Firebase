@@ -1,43 +1,43 @@
 # Smart Quiz App with Flutter,Dart and Firebase
-<table width='100%'>
+<table>
   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/1.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/2.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/3.jpeg'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/1.jpeg' alt='Image 1'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/2.jpeg' alt='Image 2'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/3.jpeg' alt='Image 3'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/4.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/5.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/6.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/4.jpeg' alt='Image 4'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/5.jpeg' alt='Image 5'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/6.jpeg' alt='Image 6'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/7.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/8.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/9.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/7.jpeg' alt='Image 7'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/8.jpeg' alt='Image 8'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/9.jpeg' alt='Image 9'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/10.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/11.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/12.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/10.jpeg' alt='Image 10'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/11.jpeg' alt='Image 11'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/12.jpeg' alt='Image 12'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/13.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/14.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/15.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/13.jpeg' alt='Image 13'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/14.jpeg' alt='Image 14'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/15.jpeg' alt='Image 15'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/16.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/17.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/18.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/16.jpeg' alt='Image 16'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/17.jpeg' alt='Image 17'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/18.jpeg' alt='Image 18'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/19.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/20.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/21.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/19.jpeg' alt='Image 19'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/20.jpeg' alt='Image 20'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/21.jpeg' alt='Image 21'></td>
   </tr>
-   <tr>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/22.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/23.jpeg'></td>
-    <td><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/24.jpeg'></td>
+  <tr>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/22.jpeg' alt='Image 22'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/23.jpeg' alt='Image 23'></td>
+    <td align="center"><img src='https://github.com/mrkzqsmv/Smart-Quiz-Game-with-Flutter-Dart-and-Firebase/blob/main/app_screens/24.jpeg' alt='Image 24'></td>
   </tr>
 </table>
